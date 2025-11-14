@@ -37,6 +37,57 @@ div img {
 	display: flex;
 	flex-flow: row wrap;
 }
+/* new class to make 5 images shaped like a diamond in one row */
+.diamond-one-row {
+  display: flex;
+  justify-content: center; /* centers the images horizontally */
+  gap: 20px; /* adds space between images */
+  margin: 40px 0;
+  flex-wrap: nowrap; /* makes sure that the images stay in one row and not drop into new lines*/
+}
+/* Style the images inside the diamond-one-row container */
+.diamond-one-row img {
+  width: 100%;
+  max-width: 140px;
+  padding: 10px;
+  background-color: aquamarine;
+  
+}
+
+/* Create the diamond shape using vertical offsets */
+.diamond-one-row img:nth-child(1) {
+  margin-top: 20px;
+}
+
+.diamond-one-row img:nth-child(2) {
+  margin-top: 0px;
+}
+
+.diamond-one-row img:nth-child(3) {
+  margin-top: -30px;  /* top of diamond */
+}
+
+.diamond-one-row img:nth-child(4) {
+  margin-top: 0px;
+}
+
+.diamond-one-row img:nth-child(5) {
+  margin-top: 20px;
+}
+
+/* Mobile fallback */
+@media (max-width: 600px) {
+  .diamond-one-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .diamond-one-row img {
+    margin-top: 0;
+    max-width: 200px;
+  }
+}
+
 
 /* attribute selector to give some margin between columns and apply styles to flex items */
 
@@ -78,6 +129,7 @@ of col-1/col-2 without affecting the others */
 	background-color:coral;
 }
 
+
 /* Tablet Landscape Screen Sizes */
 @media only screen and (min-width: 480px)  {
 	
@@ -92,7 +144,7 @@ of col-1/col-2 without affecting the others */
   
 	.col-2 {
 		flex: 0 0 44%;
-		/
+		
 	}
 
 	.specialCol-2 {
@@ -146,4 +198,5 @@ of col-1/col-2 without affecting the others */
 		flex: 0 0 92%;
 	}
 
+	
 }
